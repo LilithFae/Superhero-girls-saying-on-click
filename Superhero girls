@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--START OF CSS PART OF THE CODE-->
+<head>
+    <meta charset="UTF-8">
+    <title>PasMater</title>
+    <style>
+        .imageOverlay {
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            border-radius: 16px;
+            margin: 4px;
+            box-shadow: 0 0 16px rgb(0, 255, 255);
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .imageOverlay div {
+            position: absolute;
+            color: aqua;
+            padding: 8px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 40px;
+            text-align: center;
+            opacity: 0;
+            transition: .3s;
+            border-radius: 16px;
+        }
+
+        .imageOverlay div.show {
+            opacity: 1;
+            padding-top: 40px;
+        }
+        
+        #pics{
+            display: flex;
+            position: center;
+            margin: 100px;
+            padding: 40px;
+        
+        }    
+        </style>
+</head>
+<!-- END OF CSS PART-->
+
+<!-- START OF HTML PART OF THE CODE-->
+<body>
+   <div id="pics">
+    <div class="imageOverlay" style="background-image:url(https://www.dccomics.com/sites/default/files/LexSupergirl_marquee_5bc8bb9c68bc04.91090926.jpg)">
+        <div>Kara Danvers aka Supergirl :
+        "I embraced who I am, and I don’t want to stop."</div>
+    </div>
+    <div class="imageOverlay" style="background-image:url(https://pbs.twimg.com/media/DvmPfZ8VsAIzKAj.jpg)">
+        <div>Carol Danvers aka Captain Marvel : "I’ve been fighting with one arm tied behind my back, but what happens when I’m finally set free?"</div>
+    </div>
+
+    <div class="imageOverlay" style="background-image:url(https://i.ytimg.com/vi/m6x0vhNABpM/maxresdefault.jpg)">
+        <div>Daisy Johnson aka Quake : "You can't walk away from this. With great power comes.... a ton of weird crap you are not prepared to deal with."</div>
+    </div>
+</div>
+</body>
+<!--END OF HTML CODE-->
+
+<!--THIS IS WHERE JS starts-->
+<script>
+    var imageOverlay = document.querySelectorAll(".imageOverlay div");
+
+    for (var i = 0; i < imageOverlay.length; i++) {
+        imageOverlay[i].onclick = function() {
+            this.classList.toggle("show");
+        }
+    }
+</script>
+<!-- JS ending-->
+
+</html>
